@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "./styles/fonts.css";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #0f0f0f;
+    color: #f0ede6;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+  }
+}
+
