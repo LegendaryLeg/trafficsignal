@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 const whatsAppMessage = encodeURIComponent(
   "Здравствуйте. Я бы хотел сделать заказ."
 );
-const whatsAppHref = `https://wa.me/77073718653?text=${whatsAppMessage}`;
+const whatsAppHref = `https://wa.me/77067052342?text=${whatsAppMessage}`;
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);

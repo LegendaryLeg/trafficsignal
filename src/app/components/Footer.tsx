@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 const whatsAppMessage = encodeURIComponent(
   "Здравствуйте. Я бы хотел сделать заказ."
 );
-const whatsAppHref = `https://wa.me/77073718653?text=${whatsAppMessage}`;
+const whatsAppHref = `https://wa.me/77067052342?text=${whatsAppMessage}`;
 
 export default function Footer() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -58,7 +58,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="font-mono text-[1.125rem] text-[#25D366] hover:brightness-110 transition"
               >
-                +7 707 371 86 53
+                +77067052342
               </a>
             </div>
             <div className="mt-4 font-body font-light text-[#888888] text-sm">
