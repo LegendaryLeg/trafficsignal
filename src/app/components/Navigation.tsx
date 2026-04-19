@@ -1,9 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
-import logoLeft from "../../../content/logo bg removed (1).png";
-import logoRight from "../../../content/logo bg removed (2).png";
-
 const whatsAppMessage = encodeURIComponent(
   "Здравствуйте. Я бы хотел сделать заказ."
 );
@@ -54,13 +51,13 @@ export default function Navigation() {
           aria-label="ДорЗнак"
         >
           <img
-            src={logoLeft}
+            src="/content/logo bg removed (1).png"
             alt=""
             className="h-10 sm:h-11 md:h-12 w-auto max-h-[3rem] object-contain object-left"
             draggable={false}
           />
           <img
-            src={logoRight}
+            src="/content/logo bg removed (2).png"
             alt=""
             className="h-10 sm:h-11 md:h-12 w-auto max-h-[3rem] object-contain object-left"
             draggable={false}

@@ -1,7 +1,5 @@
-﻿import { motion } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-
-import footerLogo from "../../../content/logo bg removed (2).png";
 
 const whatsAppMessage = encodeURIComponent(
   "Здравствуйте. Я бы хотел сделать заказ."
@@ -41,7 +39,7 @@ export default function Footer() {
               aria-label="Логотип"
             >
               <img
-                src={footerLogo}
+                src="/content/logo bg removed (2).png"
                 alt=""
                 className="h-16 sm:h-20 md:h-24 w-auto max-h-28 object-contain object-left"
                 draggable={false}
