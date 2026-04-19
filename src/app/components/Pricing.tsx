@@ -2,23 +2,26 @@ import { Check } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
-const whatsAppHref = "https://wa.me/77001234567";
+const whatsAppMessage = encodeURIComponent(
+  "Здравствуйте. Я бы хотел сделать заказ."
+);
+const whatsAppHref = `https://wa.me/77073718653?text=${whatsAppMessage}`;
 
 const tiers = [
   {
     key: "standard",
     orderDesktop: 1,
     orderMobile: 2,
-    title: "Стандарт",
+    title: "Высокоинтенсивная",
     subtitle: undefined,
-    price: "от 3 500 ₸",
+    price: "от 8 200 ₸",
     note: "Малые знаки до 600мм",
     features: [
-      "Типоразмеры I–II",
-      "Световозвращающая плёнка",
-      "Срок 3–5 дней",
-      "Гарантия 3 года",
-      "Доставка по городу"
+      "Оснава из оцинкованной стали",
+      "Двойная отбортовка",
+      "Типоразмеры I–III",
+      "Средняя степень светоотражения",
+      "Доставка по всему Казахстану"
     ],
     buttonVariant: "whatsapp" as const,
     badge: undefined
@@ -27,16 +30,16 @@ const tiers = [
     key: "pro",
     orderDesktop: 2,
     orderMobile: 1,
-    title: "Профи",
-    subtitle: "(FEATURED)",
-    price: "от 6 500 ₸",
+    title: "Инженерная",
+    subtitle: "Популярная",
+    price: "от 7 600 ₸",
     note: "Средние знаки 700–900мм",
     features: [
-      "Усиленная металлическая основа",
-      "Типоразмеры III–IV",
-      "Световозвращающая плёнка повышенной плотности",
-      "Срок изготовления 3–5 дней",
-      "Гарантия 3 года",
+      "Основа из оцинкованной стали",
+      "Двойная отбортовка",
+      "Типоразмеры I–III",
+      "Быстрый срок изготовления",
+      "Хорошая степень светоотражения",
       "Доставка по всему Казахстану"
     ],
     buttonVariant: "dark" as const,
@@ -46,16 +49,16 @@ const tiers = [
     key: "project",
     orderDesktop: 3,
     orderMobile: 3,
-    title: "Проект",
+    title: "Алмазная",
     subtitle: undefined,
-    price: "По запросу",
+    price: "от 9 600 ₸",
     note: "Крупные и нестандартные",
     features: [
-      "Проектирование под ТЗ",
-      "Крупные и нестандартные типоразмеры",
-      "Модульная усиленная конструкция",
-      "Согласование размеров и макетов",
-      "Доставка по региону/объекту"
+      "Основа из оцинкованной стали",
+      "Двойная отбортовка",
+      "Типоразмеры I–III",
+      "Наивысшая степень светоотражения",
+      "Доставка по всему Казахстану"
     ],
     buttonVariant: "whatsapp" as const,
     badge: undefined
@@ -80,12 +83,12 @@ export default function Pricing() {
   return (
     <section
       ref={sectionRef}
-      id="pricing"
+      id="types"
       className="bg-[#1A1A1A] py-20 lg:py-32 scroll-mt-24"
     >
       <div className="max-w-[1440px] mx-auto px-6">
         <h2 className="font-headline text-center text-[#F0EDE6] text-[2.75rem] lg:text-[3.25rem]">
-          ОРИЕНТИРОВОЧНЫЕ ЦЕНЫ
+          ТИП СВЕТОВОЗВРАЩАЮЩЕЙ ПЛЕНКИ
         </h2>
 
         <div className="mt-12 flex flex-col lg:flex-row gap-6">
@@ -196,4 +199,3 @@ export default function Pricing() {
     </section>
   );
 }
-

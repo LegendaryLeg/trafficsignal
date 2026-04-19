@@ -1,9 +1,12 @@
-import { motion } from "motion/react";
+﻿import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 import footerLogo from "../../../content/logo bg removed (2).png";
 
-const whatsAppHref = "https://wa.me/7073718653";
+const whatsAppMessage = encodeURIComponent(
+  "Здравствуйте. Я бы хотел сделать заказ."
+);
+const whatsAppHref = `https://wa.me/77073718653?text=${whatsAppMessage}`;
 
 export default function Footer() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -61,7 +64,7 @@ export default function Footer() {
               </a>
             </div>
             <div className="mt-4 font-body font-light text-[#888888] text-sm">
-              © 2026 TraficSignal. Все права защищены.
+              © 2026 TrafficSignal. Все права защищены.
             </div>
           </div>
         </div>
@@ -69,4 +72,3 @@ export default function Footer() {
     </footer>
   );
 }
-

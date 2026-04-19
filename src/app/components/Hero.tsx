@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
-const whatsAppHref = "https://wa.me/77073718653";
+const whatsAppMessage = encodeURIComponent(
+  "Здравствуйте. Я бы хотел сделать заказ."
+);
+const whatsAppHref = `https://wa.me/77073718653?text=${whatsAppMessage}`;
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -84,20 +87,42 @@ export default function Hero() {
                 backgroundImage: `repeating-linear-gradient(45deg, rgba(214, 43, 43, 0.05), rgba(214, 43, 43, 0.05) 20px, rgba(214, 43, 43, 0.15) 20px, rgba(214, 43, 43, 0.15) 40px), radial-gradient(circle, rgba(214, 43, 43, 0.2), rgba(15, 15, 15, 0.9))`,
               }}
             >
-              <motion.div
-                className="w-48 h-48 border-4 border-[#D62B2B] rounded-full flex items-center justify-center"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
-                <div className="text-center space-y-1">
-                  <div className="font-headline text-[#F0EDE6] text-[2rem] leading-none">
-                    ГОСТ
-                  </div>
-                  <div className="font-mono text-[#D62B2B] text-xs tracking-[0.02em]">
-                    СЕРТИФИЦИРОВАНО
-                  </div>
-                </div>
-              </motion.div>
+              <div className="relative w-80 h-80 flex items-center justify-center">
+                <motion.img
+                  src="/main/1.png"
+                  alt="ГОСТ сертифицировано"
+                  className="w-[280px] h-[280px] object-contain"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                />
+
+                <motion.div
+                  className="absolute inset-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                  <svg
+                    viewBox="0 0 256 256"
+                    className="w-full h-full"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <path
+                        id="gost-ring-path"
+                        d="M 128,128 m -112,0 a 112,112 0 1,1 224,0 a 112,112 0 1,1 -224,0"
+                      />
+                    </defs>
+                    <text
+                      fill="#D62B2B"
+                      className="font-mono text-[26px] tracking-[0.22em]"
+                    >
+                      <textPath href="#gost-ring-path">
+                        • ГОСТ СЕРТИФИЦИРОВАНО •
+                      </textPath>
+                    </text>
+                  </svg>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -105,4 +130,3 @@ export default function Hero() {
     </section>
   );
 }
-

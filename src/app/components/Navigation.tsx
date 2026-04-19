@@ -4,7 +4,10 @@ import { useEffect, useMemo, useState } from "react";
 import logoLeft from "../../../content/logo bg removed (1).png";
 import logoRight from "../../../content/logo bg removed (2).png";
 
-const whatsAppHref = "https://wa.me/77073718653";
+const whatsAppMessage = encodeURIComponent(
+  "Здравствуйте. Я бы хотел сделать заказ."
+);
+const whatsAppHref = `https://wa.me/77073718653?text=${whatsAppMessage}`;
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,9 +23,9 @@ export default function Navigation() {
   const navLinks = useMemo(
     () => [
       { label: "Дорожные знаки", id: "signs" },
-      { label: "Конуса", id: "cones" },
-      { label: "Лежачие полицейские", id: "speedbump" },
-      { label: "О нас", id: "why-us" }
+      { label: "Виды Пленки", id: "types" },
+      { label: "О нас", id: "why-us" },
+      { label: "Каталог", id: "catalog" }
     ],
     []
   );
@@ -42,9 +45,11 @@ export default function Navigation() {
     >
       <div className="h-20 max-w-[1440px] mx-auto px-6 flex items-center justify-between">
         <a
-          href={whatsAppHref}
-          target="_blank"
-          rel="noreferrer"
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className="select-none flex items-center gap-2 shrink-0"
           aria-label="ДорЗнак"
         >
@@ -118,4 +123,3 @@ export default function Navigation() {
     </header>
   );
 }
-
