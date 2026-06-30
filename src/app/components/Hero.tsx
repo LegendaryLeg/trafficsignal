@@ -89,7 +89,7 @@ export default function Hero() {
             >
               <div className="relative w-80 h-80 flex items-center justify-center">
                 <motion.img
-                  src="/main-file/1.png"
+                  src="/main-file/1.webp"
                   alt="ГОСТ сертифицировано"
                   className="w-[280px] h-[280px] object-contain"
                   animate={{ rotate: -360 }}

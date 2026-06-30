@@ -22,14 +22,14 @@ const categories: Category[] = [
     num: 1,
     title: "Предупреждающие",
     desc: "Устанавливаем знаки для предупреждения участников движения. Соответствуют требованиям ГОСТ и обеспечивают видимость в любую погоду.",
-    tickerImage: "/2/preduprezh.png",
+    tickerImage: "/2/preduprezh.webp",
     tickerAlt: "Предупреждающие дорожные знаки"
   },
   {
     num: 2,
     title: "Знаки приоритета",
     desc: "Обозначаем приоритеты проезда на перекрестках и участках. Помогаем согласовать решения с требованиями проекта.",
-    tickerImage: "/2/priority.png",
+    tickerImage: "/2/priority.webp",
     tickerAlt: "Знаки приоритета",
     railSpeedMultiplier: 1.7
   },
@@ -37,14 +37,14 @@ const categories: Category[] = [
     num: 3,
     title: "Запрещающие",
     desc: "Производим знаки, ограничивающие движение и поведение на дороге. Нанесение стойких светоотражающих материалов гарантирует читаемость.",
-    tickerImage: "/2/zapret.png",
+    tickerImage: "/2/zapret.webp",
     tickerAlt: "Запрещающие дорожные знаки"
   },
   {
     num: 4,
     title: "Предписывающие",
     desc: "Знаки для направления и соблюдения правил. Изготавливаются точно по размерам и комплектации.",
-    tickerImage: "/2/predpisi.png",
+    tickerImage: "/2/predpisi.webp",
     tickerAlt: "Предписывающие дорожные знаки",
     railSpeedMultiplier: 1.7
   },
@@ -52,14 +52,14 @@ const categories: Category[] = [
     num: 5,
     title: "Информационные",
     desc: "Информируем водителей о правилах, сервисах и маршрутах. Делаем комплекты под нужды организаций и заказчиков.",
-    tickerImage: "/2/info.png",
+    tickerImage: "/2/info.webp",
     tickerAlt: "Информационные дорожные знаки"
   },
   {
     num: 6,
     title: "Знаки сервиса",
     desc: "Знаки сервиса для инфраструктуры и обслуживания. Подбираем типы табличек и обеспечиваем долговечность.",
-    tickerImage: "/2/servis.png",
+    tickerImage: "/2/servis.webp",
     tickerAlt: "Знаки сервиса",
     railSpeedMultiplier: 1.7
   }
