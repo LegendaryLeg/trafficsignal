@@ -1,27 +1,20 @@
-import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
-import ScrollingTicker from "./components/ScrollingTicker";
-import StatsBar from "./components/StatsBar";
-import SignCategories from "./components/SignCategories";
-import Pricing from "./components/Pricing";
-import WhyUs from "./components/WhyUs";
-import CTABand from "./components/CTABand";
-import Footer from "./components/Footer";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import HomePage from "./pages/HomePage";
+import ProductDetailPage from "./pages/ProductDetailPage";
+import ProductsPage from "./pages/ProductsPage";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-[#1F2937]">
-      <Navigation />
-      <main>
-        <Hero />
-        <ScrollingTicker />
-        <StatsBar />
-        <SignCategories />
-        <Pricing />
-        <WhyUs />
-        <CTABand />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="products" element={<ProductsPage />} />
+          <Route path="products/:productId" element={<ProductDetailPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }

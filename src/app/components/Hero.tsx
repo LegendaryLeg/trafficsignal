@@ -1,10 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-
-const whatsAppMessage = encodeURIComponent(
-  "Здравствуйте. Я бы хотел сделать заказ."
-);
-const whatsAppHref = `https://wa.me/77067052342?text=${whatsAppMessage}`;
+import { whatsAppHref } from "../../lib/contact";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -20,12 +17,6 @@ export default function Hero() {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
-
-  const scrollToCatalog = () => {
-    const el = document.getElementById("signs");
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
 
   return (
     <section ref={sectionRef} className="min-h-screen pt-28 pb-16 lg:pb-24 bg-white">
@@ -65,13 +56,12 @@ export default function Hero() {
                 Написать в WhatsApp
               </a>
 
-              <button
-                type="button"
-                onClick={scrollToCatalog}
-                className="border border-[#C1121F] bg-white text-[#C1121F] px-8 py-4 rounded-md hover:bg-[#C1121F] hover:text-white transition font-body font-semibold"
+              <Link
+                to="/products"
+                className="border border-[#C1121F] bg-white text-[#C1121F] px-8 py-4 rounded-md hover:bg-[#C1121F] hover:text-white transition font-body font-semibold text-center"
               >
-                Смотреть каталог ↓
-              </button>
+                Смотреть продукцию
+              </Link>
             </div>
           </motion.div>
 

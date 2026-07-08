@@ -32,9 +32,7 @@ export default function Footer() {
         <div className="flex items-start justify-between gap-10 flex-col md:flex-row">
           <div>
             <a
-              href={whatsAppHref}
-              target="_blank"
-              rel="noreferrer"
+              href="/"
               className="select-none inline-block"
               aria-label="Логотип"
             >
