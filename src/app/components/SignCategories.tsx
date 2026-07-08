@@ -98,16 +98,16 @@ function CategorySignRail({
 
   return (
     <div
-      className="relative flex-1 min-w-0 min-h-[6.25rem] overflow-hidden rounded-lg bg-[#1A1A1A]"
+      className="relative flex-1 min-w-0 min-h-[6.25rem] overflow-hidden rounded-md bg-[#F6F7F9] border border-[#E5E7EB]"
       role="img"
       aria-label={alt}
     >
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#F6F7F9] via-[#F6F7F9]/80 to-transparent"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#F6F7F9] via-[#F6F7F9]/80 to-transparent"
         aria-hidden
       />
       <motion.div
@@ -153,25 +153,24 @@ export default function SignCategories() {
     <section
       id="signs"
       ref={sectionRef}
-      className="bg-[#0F0F0F] py-20 lg:py-32 scroll-mt-24"
+      className="bg-[#F6F7F9] py-20 lg:py-28 scroll-mt-24"
     >
       <div className="max-w-[1440px] mx-auto px-6">
-        <h2 className="font-headline text-[clamp(2.5rem,5vw,4rem)] text-center tracking-[0.02em]">
-          <span className="text-[#F0EDE6]">КАТЕГОРИИ </span>
-          <span className="text-[#D62B2B]">ЗНАКОВ</span>
+        <h2 className="font-headline text-[clamp(1.75rem,3.5vw,2.75rem)] text-center tracking-tight text-[#1F2937]">
+          Категории <span className="text-[#C1121F]">знаков</span>
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((c, idx) => (
             <motion.div
               key={c.num}
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="bg-[#1A1A1A] p-8 rounded-lg border-b-4 border-transparent hover:border-b-[#D62B2B] transition-colors"
+              className="card-industrial card-industrial-hover p-8 rounded-lg"
             >
               <div className="flex items-center gap-4">
-                <div className="inline-flex shrink-0 items-center justify-center w-9 h-9 bg-[#D62B2B] text-white font-mono text-sm rounded-sm">
+                <div className="inline-flex shrink-0 items-center justify-center w-9 h-9 bg-[#C1121F] text-white font-body text-sm font-semibold rounded-sm">
                   {c.num}
                 </div>
                 <CategorySignRail
@@ -181,10 +180,10 @@ export default function SignCategories() {
                 />
               </div>
 
-              <h3 className="mt-6 font-headline text-[1.75rem] text-[#F0EDE6] leading-tight">
+              <h3 className="mt-6 font-headline text-[1.375rem] text-[#1F2937] leading-tight">
                 {c.title}
               </h3>
-              <p className="mt-3 font-body font-light text-[#888888] leading-relaxed text-base">
+              <p className="mt-3 font-body font-normal text-[#6B7280] leading-relaxed text-base">
                 {c.desc}
               </p>
             </motion.div>
@@ -194,4 +193,3 @@ export default function SignCategories() {
     </section>
   );
 }
-

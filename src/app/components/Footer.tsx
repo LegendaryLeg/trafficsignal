@@ -22,7 +22,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer ref={sectionRef} className="bg-[#1A1A1A] py-12">
+    <footer ref={sectionRef} className="bg-[#1F2937] py-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
 
           <div className="text-right w-full md:w-auto">
-            <div className="font-body font-medium text-[#F0EDE6] text-base">
+            <div className="font-body font-medium text-white text-base">
               Алматы, Казахстан
             </div>
             <div className="mt-3">
@@ -56,12 +56,12 @@ export default function Footer() {
                 href={whatsAppHref}
                 target="_blank"
                 rel="noreferrer"
-                className="font-mono text-[1.125rem] text-[#25D366] hover:brightness-110 transition"
+                className="font-body text-[1.125rem] font-medium text-white hover:text-[#C1121F] transition"
               >
                 +77067052342
               </a>
             </div>
-            <div className="mt-4 font-body font-light text-[#888888] text-sm">
+            <div className="mt-4 font-body font-normal text-[#9CA3AF] text-sm">
               © 2026 TrafficSignal. Все права защищены.
             </div>
           </div>

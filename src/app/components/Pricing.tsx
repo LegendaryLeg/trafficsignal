@@ -42,8 +42,8 @@ const tiers = [
       "Хорошая степень светоотражения",
       "Доставка по всему Казахстану"
     ],
-    buttonVariant: "dark" as const,
-    badge: "ПОПУЛЯРНЫЙ"
+    buttonVariant: "primary" as const,
+    badge: "Популярный"
   },
   {
     key: "project",
@@ -84,14 +84,14 @@ export default function Pricing() {
     <section
       ref={sectionRef}
       id="types"
-      className="bg-[#1A1A1A] py-20 lg:py-32 scroll-mt-24"
+      className="bg-white py-20 lg:py-28 scroll-mt-24"
     >
       <div className="max-w-[1440px] mx-auto px-6">
-        <h2 className="font-headline text-center text-[#F0EDE6] text-[2.75rem] lg:text-[3.25rem]">
-          ТИП СВЕТОВОЗВРАЩАЮЩЕЙ ПЛЕНКИ
+        <h2 className="font-headline text-center text-[#1F2937] text-[clamp(1.75rem,3.5vw,2.75rem)] tracking-tight">
+          Тип световозвращающей пленки
         </h2>
 
-        <div className="mt-12 flex flex-col lg:flex-row gap-6">
+        <div className="mt-14 flex flex-col lg:flex-row gap-6">
           {tiers.map((t, idx) => {
             const isFeatured = t.key === "pro";
             const orderClass =
@@ -108,39 +108,36 @@ export default function Pricing() {
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
                 className={[
                   orderClass,
-                  "flex-1 rounded-lg p-8 relative border border-[#888888]/10",
-                  isFeatured ? "bg-[#D62B2B] md:scale-105 transition-transform" : "bg-[#0F0F0F]"
+                  "flex-1 rounded-lg p-8 relative bg-white",
+                  isFeatured
+                    ? "border-2 border-[#C1121F] shadow-[0_4px_16px_rgba(193,18,31,0.1)]"
+                    : "border border-[#E5E7EB] shadow-[0_1px_2px_rgba(31,41,55,0.04)]"
                 ].join(" ")}
               >
                 {isFeatured && t.badge && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="bg-[#F5C518] text-[#0F0F0F] font-mono text-xs px-4 py-1 rounded-md">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <div className="bg-[#C1121F] text-white font-body text-xs font-semibold px-4 py-1 rounded-md">
                       {t.badge}
                     </div>
                   </div>
                 )}
 
                 <div className="pt-2">
-                  <div className="font-headline text-[2rem] text-[#F0EDE6]">
+                  <div className="font-headline text-[1.5rem] text-[#1F2937]">
                     {t.title}
                   </div>
                   {t.subtitle && (
-                    <div className="font-mono text-xs text-[#0F0F0F]/80 mt-1">
+                    <div className="font-body text-xs text-[#C1121F] font-medium mt-1">
                       {t.subtitle}
                     </div>
                   )}
                 </div>
 
-                <div className={isFeatured ? "text-[#0F0F0F]" : "text-[#F0EDE6]"}>
-                  <div className="mt-4 font-headline text-[2.6rem] leading-none">
+                <div className="text-[#1F2937]">
+                  <div className="mt-4 font-headline text-[2.25rem] leading-none">
                     {t.price}
                   </div>
-                  <div
-                    className={[
-                      "mt-3 font-body font-light text-base",
-                      isFeatured ? "text-[#0F0F0F]/80" : "text-[#888888]"
-                    ].join(" ")}
-                  >
+                  <div className="mt-3 font-body font-normal text-base text-[#6B7280]">
                     {t.note}
                   </div>
                 </div>
@@ -150,22 +147,17 @@ export default function Pricing() {
                     <li key={f} className="flex items-start gap-3">
                       <Check
                         size={18}
-                        color={isFeatured ? "#0F0F0F" : "#25D366"}
-                        className="mt-0.5"
+                        color="#C1121F"
+                        className="mt-0.5 shrink-0"
                       />
-                      <span
-                        className={[
-                          "font-body font-light text-base leading-relaxed",
-                          isFeatured ? "text-[#0F0F0F]" : "text-[#F0EDE6]"
-                        ].join(" ")}
-                      >
+                      <span className="font-body font-normal text-base leading-relaxed text-[#1F2937]">
                         {f}
                       </span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-6 text-xs text-[#888888]">
+                <div className="mt-6 text-xs text-[#6B7280]">
                   Цены являются ориентировочными и могут зависеть от проекта и
                   типоразмеров.
                 </div>
@@ -176,7 +168,7 @@ export default function Pricing() {
                       href={whatsAppHref}
                       target="_blank"
                       rel="noreferrer"
-                      className="block w-full text-center bg-[#25D366] text-[#0F0F0F] px-8 py-4 rounded-md hover:brightness-110 transition font-body font-medium"
+                      className="block w-full text-center bg-[#25D366] text-white px-8 py-4 rounded-md hover:brightness-95 transition font-body font-semibold"
                     >
                       Написать в WhatsApp
                     </a>
@@ -185,7 +177,7 @@ export default function Pricing() {
                       href={whatsAppHref}
                       target="_blank"
                       rel="noreferrer"
-                      className="block w-full text-center bg-[#0F0F0F] text-[#F0EDE6] px-8 py-4 rounded-md hover:bg-[#1A1A1A] transition font-body font-medium"
+                      className="block w-full text-center bg-[#C1121F] text-white px-8 py-4 rounded-md hover:bg-[#A10F1A] transition font-body font-semibold"
                     >
                       Оставить заявку
                     </a>

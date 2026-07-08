@@ -22,7 +22,7 @@ export default function ScrollingTicker() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#D62B2B] py-4 overflow-hidden"
+      className="bg-[#F6F7F9] border-y border-[#E5E7EB] py-4 overflow-hidden"
       id="ticker"
     >
       <motion.div
@@ -30,7 +30,7 @@ export default function ScrollingTicker() {
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
-        <div className="font-mono uppercase tracking-[0.1em] text-[#F0EDE6] whitespace-nowrap">
+        <div className="font-body font-medium tracking-wide text-[#6B7280] whitespace-nowrap text-sm">
           <motion.div
             className="flex w-max"
             animate={{ x: [0, "-33.33%"] }}
@@ -47,4 +47,3 @@ export default function ScrollingTicker() {
     </section>
   );
 }
-

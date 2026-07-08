@@ -44,31 +44,30 @@ export default function WhyUs() {
     <section
       ref={sectionRef}
       id="why-us"
-      className="bg-[#0F0F0F] py-20 lg:py-32 scroll-mt-24"
+      className="bg-[#F6F7F9] py-20 lg:py-28 scroll-mt-24"
     >
       <div className="max-w-[1440px] mx-auto px-6">
-        <h2 className="font-headline text-[clamp(2.5rem,5vw,4rem)] text-center tracking-[0.02em]">
-          <span className="text-[#F0EDE6]">ПОЧЕМУ </span>
-          <span className="text-[#D62B2B]">МЫ</span>
+        <h2 className="font-headline text-[clamp(1.75rem,3.5vw,2.75rem)] text-center tracking-tight text-[#1F2937]">
+          Почему <span className="text-[#C1121F]">мы</span>
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((f, idx) => (
             <motion.article
               key={f.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="bg-[#1A1A1A] p-8 rounded-lg border border-transparent hover:border-[#D62B2B]/50 transition-colors"
+              className="card-industrial card-industrial-hover p-8 rounded-lg"
             >
-              <div className="w-16 h-16 border-2 border-[#D62B2B] flex items-center justify-center">
-                <f.Icon size={28} color="#D62B2B" />
+              <div className="w-14 h-14 border border-[#C1121F] rounded-md flex items-center justify-center bg-white">
+                <f.Icon size={26} color="#C1121F" />
               </div>
 
-              <h3 className="mt-6 font-headline text-[1.75rem] text-[#F0EDE6]">
+              <h3 className="mt-6 font-headline text-[1.375rem] text-[#1F2937]">
                 {f.title}
               </h3>
-              <p className="mt-3 font-body font-light text-[#888888] leading-relaxed">
+              <p className="mt-3 font-body font-normal text-[#6B7280] leading-relaxed">
                 {f.desc}
               </p>
             </motion.article>
@@ -78,4 +77,3 @@ export default function WhyUs() {
     </section>
   );
 }
-

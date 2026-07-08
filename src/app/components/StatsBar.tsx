@@ -7,10 +7,10 @@ type StatItem = {
 };
 
 const stats: StatItem[] = [
-  { value: "ВСЕ ВИДЫ ЗНАКОВ" },
-  { value: "ЦЕНА БЕЗ ПОСРЕДНИКОВ" },
-  { value: "БЫСТРЫЙ СРОК ИЗГОТОВЛЕНИЯ" },
-  { value: "100% СООТВЕТСТВИЕ СТАНДАРТАМ"}
+  { value: "Все виды знаков" },
+  { value: "Цена без посредников" },
+  { value: "Быстрый срок изготовления" },
+  { value: "100% соответствие стандартам" }
 ];
 
 const splitFirstWord = (text: string) => {
@@ -37,7 +37,7 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#0F0F0F] py-16 lg:py-20">
+    <section ref={sectionRef} className="bg-white py-16 lg:py-24">
       <div className="max-w-[1440px] mx-auto px-3">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-y-0 gap-x-0">
           {stats.map((s, idx) => {
@@ -52,18 +52,20 @@ export default function StatsBar() {
                 className={[
                   "py-2",
                   "px-4 lg:px-10",
-                  idx > 0 ? "lg:border-l lg:border-[#888888]/20" : ""
+                  idx > 0 ? "lg:border-l lg:border-[#E5E7EB]" : ""
                 ].join(" ")}
               >
-                <div className="font-headline text-[clamp(1.3rem,2.9vw,2rem)] leading-tight tracking-[0.02em]">
-                  <span className="block text-[#F5C518]">{firstWord}</span>
+                <div className="font-headline text-[clamp(1.15rem,2.4vw,1.65rem)] leading-snug tracking-tight">
+                  <span className="block text-[#C1121F]">{firstWord}</span>
                   {restText ? (
-                    <span className="block text-[#F0EDE6]">{restText}</span>
+                    <span className="block text-[#1F2937]">{restText}</span>
                   ) : null}
                 </div>
-                <div className="mt-4 font-mono uppercase text-[#888888] text-xs tracking-[0.05em]">
-                  {s.label}
-                </div>
+                {s.label ? (
+                  <div className="mt-4 font-body text-[#6B7280] text-xs tracking-wide">
+                    {s.label}
+                  </div>
+                ) : null}
               </motion.div>
             );
           })}

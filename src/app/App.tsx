@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#0F0F0F]">
+    <div className="min-h-screen bg-white text-[#1F2937]">
       <Navigation />
       <main>
         <Hero />
@@ -25,4 +25,3 @@ export default function App() {
     </div>
   );
 }
-

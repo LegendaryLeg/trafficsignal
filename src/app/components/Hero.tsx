@@ -28,28 +28,28 @@ export default function Hero() {
   };
 
   return (
-    <section ref={sectionRef} className="min-h-screen pt-20 bg-[#0F0F0F]">
+    <section ref={sectionRef} className="min-h-screen pt-28 pb-16 lg:pb-24 bg-white">
       <div className="max-w-[1440px] mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="space-y-7"
           >
-            <div className="inline-flex items-center rounded-sm bg-[#D62B2B] px-4 py-1.5 font-mono text-sm tracking-[0.1em]">
+            <div className="inline-flex items-center rounded-sm bg-[#C1121F] px-4 py-1.5 font-body text-sm font-medium tracking-wide text-white">
               ГОСТ 32945-2014 · Казахстан
             </div>
 
-            <h1 className="font-headline text-[clamp(3rem,8vw,5.5rem)] leading-none tracking-[0.02em] text-[#F0EDE6]">
-              ДОРОЖНЫЕ ЗНАКИ
+            <h1 className="font-headline text-[clamp(2.5rem,6vw,4.25rem)] leading-[1.1] tracking-tight text-[#1F2937]">
+              Дорожные знаки
               <br />
-              ДЛЯ ДОРОГ
+              для дорог
               <br />
-              КАЗАХСТАНА
+              Казахстана
             </h1>
 
-            <p className="font-body font-light text-[#888888] text-lg leading-[1.7] max-w-[44rem]">
+            <p className="font-body font-normal text-[#6B7280] text-lg leading-[1.7] max-w-[44rem]">
               Производство дорожных знаков по стандартам ГОСТ. Полное
               соответствие требованиям, быстрые сроки изготовления и доставка
               по всему Казахстану.
@@ -60,7 +60,7 @@ export default function Hero() {
                 href={whatsAppHref}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-[#25D366] text-[#0F0F0F] px-8 py-4 rounded-md hover:brightness-110 transition font-body font-medium text-center"
+                className="bg-[#25D366] text-white px-8 py-4 rounded-md hover:brightness-95 transition font-body font-semibold text-center"
               >
                 Написать в WhatsApp
               </a>
@@ -68,7 +68,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={scrollToCatalog}
-                className="border border-[#F0EDE6]/20 text-[#F0EDE6] px-8 py-4 rounded-md hover:border-[#D62B2B] hover:text-[#D62B2B] transition font-body font-medium"
+                className="border border-[#C1121F] bg-white text-[#C1121F] px-8 py-4 rounded-md hover:bg-[#C1121F] hover:text-white transition font-body font-semibold"
               >
                 Смотреть каталог ↓
               </button>
@@ -81,12 +81,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hidden lg:block"
           >
-            <div
-              className="relative h-full min-h-[420px] flex items-center justify-center rounded-none"
-              style={{
-                backgroundImage: `repeating-linear-gradient(45deg, rgba(214, 43, 43, 0.05), rgba(214, 43, 43, 0.05) 20px, rgba(214, 43, 43, 0.15) 20px, rgba(214, 43, 43, 0.15) 40px), radial-gradient(circle, rgba(214, 43, 43, 0.2), rgba(15, 15, 15, 0.9))`,
-              }}
-            >
+            <div className="relative h-full min-h-[420px] flex items-center justify-center rounded-lg bg-[#F6F7F9] border border-[#E5E7EB]">
               <div className="relative w-80 h-80 flex items-center justify-center">
                 <motion.img
                   src="/main-file/1.webp"
@@ -113,8 +108,8 @@ export default function Hero() {
                       />
                     </defs>
                     <text
-                      fill="#D62B2B"
-                      className="font-mono text-[26px] tracking-[0.22em]"
+                      fill="#C1121F"
+                      className="font-body text-[26px] tracking-[0.22em]"
                     >
                       <textPath href="#gost-ring-path">
                         • ГОСТ СЕРТИФИЦИРОВАНО •
