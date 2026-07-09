@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import { categoryLabels } from "../../../data/categories";
 import type { Product } from "../../../data/productTypes";
+import StoreAvailabilityBadge from "./StoreAvailabilityBadge";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
     <article className="card-industrial card-industrial-hover rounded-lg overflow-hidden flex flex-col h-full">
       <Link
         to={`/products/${product.id}`}
-        className="block bg-[#F6F7F9] aspect-[4/3] p-6 flex items-center justify-center border-b border-[#E5E7EB]"
+        className="relative block bg-[#F6F7F9] aspect-[4/3] p-6 flex items-center justify-center border-b border-[#E5E7EB]"
       >
+        <StoreAvailabilityBadge className="absolute top-3 right-3 z-10" />
         <img
           src={product.image}
           alt={`${product.code} ${product.name}`}

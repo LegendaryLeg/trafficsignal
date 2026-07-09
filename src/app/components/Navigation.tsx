@@ -27,7 +27,7 @@ export default function Navigation() {
 
   const navLinks = useMemo<NavItem[]>(
     () => [
-      { label: "Продукция", type: "route", path: "/products" },
+      { label: "Магазин", type: "route", path: "/products" },
       { label: "Дорожные знаки", type: "section", id: "signs" },
       { label: "Виды плёнки", type: "section", id: "types" },
       { label: "О нас", type: "section", id: "why-us" }

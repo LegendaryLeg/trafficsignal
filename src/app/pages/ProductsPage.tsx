@@ -5,9 +5,11 @@ import { productFilters } from "../../data/categories";
 import { products } from "../../data/products";
 import type { ProductCategoryId } from "../../data/productTypes";
 import Breadcrumbs from "../components/catalog/Breadcrumbs";
-import CatalogCTA from "../components/catalog/CatalogCTA";
 import Pagination from "../components/catalog/Pagination";
 import ProductCard from "../components/catalog/ProductCard";
+import StoreAvailabilityBadge from "../components/catalog/StoreAvailabilityBadge";
+import StoreBanner from "../components/catalog/StoreBanner";
+import VisitStoreCTA from "../components/catalog/VisitStoreCTA";
 
 const PAGE_SIZE = 12;
 
@@ -88,13 +90,15 @@ export default function ProductsPage() {
 
           <div className="mt-6 grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-10 items-end">
             <div>
+              <StoreAvailabilityBadge className="mb-4" />
               <h1 className="font-headline text-[clamp(2rem,4vw,3rem)] tracking-tight text-[#1F2937]">
-                Продукция
+                Продукция в наличии в магазине
               </h1>
               <p className="mt-4 font-body text-[#6B7280] text-lg leading-relaxed max-w-2xl">
-                Полный каталог дорожных знаков по ГОСТ 32945-2014, а также
-                сопутствующего оборудования для организации дорожного движения.
-                Доступны разные типоразмеры и классы световозвращающей плёнки.
+                Каталог средств обеспечения безопасности дорожного движения,
+                доступных для покупки в нашем розничном магазине в Алматы.
+                Нужно что-то другое? Мы также изготавливаем дорожные знаки и
+                оборудование на заказ.
               </p>
             </div>
 
@@ -112,6 +116,8 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      <StoreBanner />
 
       <section className="py-10 lg:py-12">
         <div className="max-w-[1440px] mx-auto px-6">
@@ -196,7 +202,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <CatalogCTA />
+      <VisitStoreCTA />
     </div>
   );
 }

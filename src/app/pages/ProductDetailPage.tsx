@@ -11,6 +11,7 @@ import { quoteWhatsAppHref } from "../../lib/contact";
 import Breadcrumbs from "../components/catalog/Breadcrumbs";
 import CatalogCTA from "../components/catalog/CatalogCTA";
 import ProductCard from "../components/catalog/ProductCard";
+import StoreAvailabilityBlock from "../components/catalog/StoreAvailabilityBlock";
 
 export default function ProductDetailPage() {
   const { productId = "" } = useParams();
@@ -94,6 +95,8 @@ export default function ProductDetailPage() {
               <p className="mt-4 font-body text-[#6B7280] text-base leading-relaxed">
                 {product.description}
               </p>
+
+              <StoreAvailabilityBlock />
 
               <dl className="mt-8 space-y-4">
                 <div>
