@@ -1,4 +1,5 @@
 import type { Product } from "./productTypes";
+import { STOCK_IN, STOCK_OUT } from "./productTypes";
 
 /**
  * Catalog data source.
@@ -6,7 +7,7 @@ import type { Product } from "./productTypes";
  */
 export const products: Product[] = [
   {
-    id: "1-1",
+    id: "1.1",
     code: "1.1",
     name: "Опасный поворот",
     category: "warning",
@@ -20,10 +21,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "1-2",
+    id: "1.2",
     code: "1.2",
     name: "Опасные повороты",
     category: "warning",
@@ -37,10 +39,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "1-5",
+    id: "1.5",
     code: "1.5",
     name: "Пересечение с трамвайной линией",
     category: "warning",
@@ -54,10 +57,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "1-8",
+    id: "1.8",
     code: "1.8",
     name: "Светофорное регулирование",
     category: "warning",
@@ -71,10 +75,47 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "1-22",
+    id: "1.18.2",
+    code: "1.18.2",
+    name: "Сужение дороги справа",
+    category: "warning",
+    group: "road-signs",
+    shortDescription:
+      "Предупреждает о сужении проезжей части с правой стороны.",
+    description:
+      "Дорожный знак «Сужение дороги справа» устанавливают перед участками, где проезжая часть сужается справа. Изготавливается по ГОСТ из оцинкованной стали со световозвращающей плёнкой.",
+    image: "/2/preduprezh.webp",
+    sizes: ["700 мм", "900 мм", "1200 мм"],
+    reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
+    material: "Оцинкованная сталь",
+    thickness: "1 мм",
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
+  },
+  {
+    id: "1.18.3",
+    code: "1.18.3",
+    name: "Сужение дороги слева",
+    category: "warning",
+    group: "road-signs",
+    shortDescription:
+      "Предупреждает о сужении проезжей части с левой стороны.",
+    description:
+      "Дорожный знак «Сужение дороги слева» устанавливают перед участками, где проезжая часть сужается слева. Изготавливается по ГОСТ из оцинкованной стали со световозвращающей плёнкой.",
+    image: "/2/preduprezh.webp",
+    sizes: ["700 мм", "900 мм", "1200 мм"],
+    reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
+    material: "Оцинкованная сталь",
+    thickness: "1 мм",
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
+  },
+  {
+    id: "1.22",
     code: "1.22",
     name: "Пешеходный переход",
     category: "warning",
@@ -88,10 +129,29 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "2-1",
+    id: "1.23",
+    code: "1.23",
+    name: "Дорожные работы",
+    category: "warning",
+    group: "road-signs",
+    shortDescription:
+      "Предупреждает о проведении дорожных работ на участке.",
+    description:
+      "Дорожный знак «Дорожные работы» применяется для обозначения участков ремонта и строительных работ. Изготавливается по ГОСТ со световозвращающим покрытием для видимости днём и ночью.",
+    image: "/2/preduprezh.webp",
+    sizes: ["700 мм", "900 мм", "1200 мм"],
+    reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
+    material: "Оцинкованная сталь",
+    thickness: "1 мм",
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
+  },
+  {
+    id: "2.1",
     code: "2.1",
     name: "Главная дорога",
     category: "priority",
@@ -105,10 +165,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "2-4",
+    id: "2.4",
     code: "2.4",
     name: "Уступите дорогу",
     category: "priority",
@@ -122,10 +183,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "2-5",
+    id: "2.5",
     code: "2.5",
     name: "Движение без остановки запрещено",
     category: "priority",
@@ -139,10 +201,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "3-1",
+    id: "3.1",
     code: "3.1",
     name: "Въезд запрещён",
     category: "prohibition",
@@ -156,11 +219,12 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
   },
   {
-    id: "3-18",
-    code: "3.18",
+    id: "3.18.1",
+    code: "3.18.1",
     name: "Поворот направо запрещён",
     category: "prohibition",
     group: "road-signs",
@@ -173,10 +237,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "3-24",
+    id: "3.24",
     code: "3.24",
     name: "Ограничение максимальной скорости",
     category: "prohibition",
@@ -190,10 +255,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
   },
   {
-    id: "4-1-1",
+    id: "4.1.1",
     code: "4.1.1",
     name: "Движение прямо",
     category: "mandatory",
@@ -207,10 +273,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "4-2-1",
+    id: "4.2.1",
     code: "4.2.1",
     name: "Объезд препятствия справа",
     category: "mandatory",
@@ -224,27 +291,83 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
   },
   {
-    id: "5-19-1",
+    id: "4.2.2",
+    code: "4.2.2",
+    name: "Объезд препятствия слева",
+    category: "mandatory",
+    group: "road-signs",
+    shortDescription:
+      "Указывает направление объезда препятствия слева.",
+    description:
+      "Предписывающий знак «Объезд препятствия слева» применяется для безопасного объезда. Изготавливается по ГОСТ в нужном типоразмере.",
+    image: "/2/predpisi.webp",
+    sizes: ["700 мм", "900 мм", "1200 мм"],
+    reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
+    material: "Оцинкованная сталь",
+    thickness: "1 мм",
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
+  },
+  {
+    id: "5.19.1",
     code: "5.19.1",
-    name: "Пешеходный переход",
+    name: "Тупик",
     category: "information",
     group: "road-signs",
     shortDescription:
-      "Обозначает место пешеходного перехода.",
+      "Обозначает дорогу, не имеющую сквозного проезда.",
     description:
-      "Информационный знак пешеходного перехода. Рекомендуется комплектовать с предупреждающими знаками и разметкой.",
+      "Информационный знак «Тупик» указывает, что дорога не имеет сквозного проезда. Изготавливается по ГОСТ со световозвращающей плёнкой.",
     image: "/2/info.webp",
     sizes: ["700 мм", "900 мм", "1200 мм"],
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
   },
   {
-    id: "5-16",
+    id: "5.32.2",
+    code: "5.32.2",
+    name: "Направление объезда",
+    category: "information",
+    group: "road-signs",
+    shortDescription:
+      "Указывает направление объезда препятствия направо.",
+    description:
+      "Информационный знак «Направление объезда» (направо) применяется при организации временного или постоянного объезда. Изготавливается по ГОСТ.",
+    image: "/2/info.webp",
+    sizes: ["900 мм", "1200 мм"],
+    reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
+    material: "Оцинкованная сталь",
+    thickness: "1 мм",
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
+  },
+  {
+    id: "5.32.3",
+    code: "5.32.3",
+    name: "Направление объезда",
+    category: "information",
+    group: "road-signs",
+    shortDescription:
+      "Указывает направление объезда препятствия налево.",
+    description:
+      "Информационный знак «Направление объезда» (налево) применяется при организации временного или постоянного объезда. Изготавливается по ГОСТ.",
+    image: "/2/info.webp",
+    sizes: ["900 мм", "1200 мм"],
+    reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
+    material: "Оцинкованная сталь",
+    thickness: "1 мм",
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_IN
+  },
+  {
+    id: "5.16",
     code: "5.16",
     name: "Место остановки автобуса",
     category: "information",
@@ -258,10 +381,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "6-1",
+    id: "6.1",
     code: "6.1",
     name: "Пункт медицинской помощи",
     category: "service",
@@ -275,10 +399,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "6-3",
+    id: "6.3",
     code: "6.3",
     name: "Автозаправочная станция",
     category: "service",
@@ -292,10 +417,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "8-1-1",
+    id: "8.1.1",
     code: "8.1.1",
     name: "Расстояние до объекта",
     category: "additional-plates",
@@ -309,10 +435,11 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
-    id: "8-2-1",
+    id: "8.2.1",
     code: "8.2.1",
     name: "Зона действия",
     category: "additional-plates",
@@ -326,7 +453,8 @@ export const products: Product[] = [
     reflectiveFilms: ["Инженерная", "Высокоинтенсивная", "Алмазная"],
     material: "Оцинкованная сталь",
     thickness: "1 мм",
-    gost: "ГОСТ 32945-2014"
+    gost: "ГОСТ 32945-2014",
+    stockStatus: STOCK_OUT
   },
   {
     id: "mirror-600",
@@ -343,7 +471,8 @@ export const products: Product[] = [
     reflectiveFilms: [],
     material: "ABS / акриловое зеркало",
     thickness: undefined,
-    gost: "ТУ производителя"
+    gost: "ТУ производителя",
+    stockStatus: STOCK_OUT
   },
   {
     id: "mirror-800",
@@ -359,7 +488,8 @@ export const products: Product[] = [
     sizes: ["Ø800 мм"],
     reflectiveFilms: [],
     material: "ABS / акриловое зеркало",
-    gost: "ТУ производителя"
+    gost: "ТУ производителя",
+    stockStatus: STOCK_OUT
   },
   {
     id: "cone-500",
@@ -375,7 +505,8 @@ export const products: Product[] = [
     sizes: ["500 мм"],
     reflectiveFilms: ["Световозвращающие полосы"],
     material: "Полиэтилен / ПВХ",
-    gost: "ТУ производителя"
+    gost: "ТУ производителя",
+    stockStatus: STOCK_OUT
   },
   {
     id: "cone-750",
@@ -391,7 +522,8 @@ export const products: Product[] = [
     sizes: ["750 мм"],
     reflectiveFilms: ["Световозвращающие полосы"],
     material: "Полиэтилен / ПВХ",
-    gost: "ТУ производителя"
+    gost: "ТУ производителя",
+    stockStatus: STOCK_OUT
   },
   {
     id: "bump-900",
@@ -407,7 +539,8 @@ export const products: Product[] = [
     sizes: ["900 мм (модуль)"],
     reflectiveFilms: ["Световозвращающие элементы"],
     material: "Резина / композит",
-    gost: "ТУ производителя"
+    gost: "ТУ производителя",
+    stockStatus: STOCK_OUT
   },
   {
     id: "barrier-1",
@@ -423,7 +556,8 @@ export const products: Product[] = [
     sizes: ["по проекту"],
     reflectiveFilms: ["Световозвращающие элементы"],
     material: "Пластик / сталь",
-    gost: "ТУ производителя"
+    gost: "ТУ производителя",
+    stockStatus: STOCK_OUT
   },
   {
     id: "parking-block",
@@ -439,7 +573,8 @@ export const products: Product[] = [
     sizes: ["по проекту"],
     reflectiveFilms: [],
     material: "Сталь / порошковая окраска",
-    gost: "ТУ производителя"
+    gost: "ТУ производителя",
+    stockStatus: STOCK_OUT
   },
   {
     id: "pole-76",
@@ -456,7 +591,8 @@ export const products: Product[] = [
     reflectiveFilms: [],
     material: "Оцинкованная сталь",
     thickness: "3 мм",
-    gost: "ГОСТ / ТУ"
+    gost: "ГОСТ / ТУ",
+    stockStatus: STOCK_OUT
   },
   {
     id: "delineator-1",
@@ -472,24 +608,40 @@ export const products: Product[] = [
     sizes: ["по проекту"],
     reflectiveFilms: ["Световозвращающие элементы"],
     material: "Полиуретан / ПВХ",
-    gost: "ТУ производителя"
+    gost: "ТУ производителя",
+    stockStatus: STOCK_OUT
   }
 ];
 
 export function getProductById(id: string): Product | undefined {
-  return products.find((p) => p.id === id);
+  const exact = products.find((p) => p.id === id);
+  if (exact) return exact;
+
+  // Legacy hyphenated IDs (e.g. "1-1" -> "1.1", "4-1-1" -> "4.1.1")
+  const dotted = id.replace(/-/g, ".");
+  if (dotted !== id) {
+    return products.find((p) => p.id === dotted || p.code === dotted);
+  }
+  return undefined;
+}
+
+export function isInStock(product: Product): boolean {
+  return product.stockStatus === STOCK_IN;
+}
+
+/** Products currently available at the retail store (shown on /products). */
+export function getInStockProducts(): Product[] {
+  return products.filter(isInStock);
 }
 
 export function getRelatedProducts(product: Product, limit = 6): Product[] {
-  const sameCategory = products.filter(
-    (p) => p.category === product.category && p.id !== product.id
-  );
+  const pool = getInStockProducts().filter((p) => p.id !== product.id);
+  const sameCategory = pool.filter((p) => p.category === product.category);
   if (sameCategory.length >= limit) return sameCategory.slice(0, limit);
 
-  const sameGroup = products.filter(
+  const sameGroup = pool.filter(
     (p) =>
       p.group === product.group &&
-      p.id !== product.id &&
       !sameCategory.some((s) => s.id === p.id)
   );
   return [...sameCategory, ...sameGroup].slice(0, limit);

@@ -25,6 +25,12 @@ export type ProductGroupId =
   | "parking-equipment"
   | "mounting-hardware";
 
+/** Store stock status. Toggle to control what appears on the Products page. */
+export type StockStatus = "В наличии" | "Нет в наличии";
+
+export const STOCK_IN: StockStatus = "В наличии";
+export const STOCK_OUT: StockStatus = "Нет в наличии";
+
 export type Product = {
   id: string;
   code: string;
@@ -39,6 +45,8 @@ export type Product = {
   material: string;
   thickness?: string;
   gost: string;
+  /** Whether the product is currently available at the retail store. */
+  stockStatus: StockStatus;
   pdfUrl?: string;
   specifications?: { label: string; value: string }[];
 };

@@ -2,7 +2,7 @@ import { Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { productFilters } from "../../data/categories";
-import { products } from "../../data/products";
+import { getInStockProducts } from "../../data/products";
 import type { ProductCategoryId } from "../../data/productTypes";
 import Breadcrumbs from "../components/catalog/Breadcrumbs";
 import Pagination from "../components/catalog/Pagination";
@@ -44,7 +44,7 @@ export default function ProductsPage() {
 
   const filtered = useMemo(() => {
     const q = queryParam.trim().toLowerCase();
-    return products.filter((p) => {
+    return getInStockProducts().filter((p) => {
       const matchesCategory =
         activeCategory === "all" || p.category === activeCategory;
       const matchesQuery =
