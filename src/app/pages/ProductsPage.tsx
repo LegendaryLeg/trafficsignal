@@ -1,9 +1,9 @@
 import { Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { productFilters } from "../../data/categories";
+import { matchesShopFilter, productFilters } from "../../data/categories";
 import { getInStockProducts } from "../../data/products";
-import type { ProductCategoryId } from "../../data/productTypes";
+import type { ShopFilterId } from "../../data/productTypes";
 import Breadcrumbs from "../components/catalog/Breadcrumbs";
 import Pagination from "../components/catalog/Pagination";
 import ProductCard from "../components/catalog/ProductCard";
@@ -38,15 +38,14 @@ export default function ProductsPage() {
     return () => window.clearTimeout(timer);
   }, [query, queryParam, searchParams, setSearchParams]);
 
-  const activeCategory = (
+  const activeFilter = (
     productFilters.some((f) => f.id === categoryParam) ? categoryParam : "all"
-  ) as ProductCategoryId | "all";
+  ) as ShopFilterId;
 
   const filtered = useMemo(() => {
     const q = queryParam.trim().toLowerCase();
     return getInStockProducts().filter((p) => {
-      const matchesCategory =
-        activeCategory === "all" || p.category === activeCategory;
+      const matchesCategory = matchesShopFilter(p, activeFilter);
       const matchesQuery =
         !q ||
         p.code.toLowerCase().includes(q) ||
@@ -55,7 +54,7 @@ export default function ProductsPage() {
         p.description.toLowerCase().includes(q);
       return matchesCategory && matchesQuery;
     });
-  }, [activeCategory, queryParam]);
+  }, [activeFilter, queryParam]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const page = Math.min(Math.max(1, pageParam || 1), totalPages);
@@ -139,7 +138,7 @@ export default function ProductsPage() {
 
           <div className="mt-6 flex flex-wrap gap-2">
             {productFilters.map((f) => {
-              const active = f.id === activeCategory;
+              const active = f.id === activeFilter;
               return (
                 <button
                   key={f.id}
